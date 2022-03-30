@@ -1,5 +1,6 @@
 *.cdr
 *.eps
 .idea
+build
 ignore/
 node_modules/
