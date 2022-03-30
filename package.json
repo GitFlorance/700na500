@@ -1,0 +1,19 @@
+{
+  "name": "700na500",
+  "version": "1.0.0",
+  "description": "test project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GitFlorance/700na500.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GitFlorance/700na500/issues"
+  },
+  "homepage": "https://github.com/GitFlorance/700na500#readme"
+}
