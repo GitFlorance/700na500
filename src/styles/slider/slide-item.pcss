@@ -1,0 +1,43 @@
+.slide-item {
+    height: 650px;
+    width: 100%;
+    max-width: 1240px;
+    position: relative;
+    margin: 0 10px;
+
+    @media screen and (max-width: 768px) {
+        height: 450px;
+        max-width: 290px;
+    }
+
+    &__title {
+        position: absolute;
+        bottom: 160px;
+        left: 50px;
+        font-size: 80px;
+        line-height: 85px;
+        font-weight: 500;
+        color: #FFF;
+
+    }
+
+    &__img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+
+        &--mobile&&& {
+            display: none;
+
+            @media screen and (max-width: 768px) {
+                display: block;
+            }
+        }
+
+        &--desktop {
+            @media screen and (max-width: 768px) {
+                display: none;
+            }
+        }
+    }
+}

@@ -41,6 +41,7 @@
     "gulp": "^4.0.2",
     "gulp-cli": "^2.3.0",
     "gulp-rename": "^1.4.0",
+    "jquery": "^3.6.0",
     "nunjucks": "^3.2.3",
     "postcss-short": "^5.0.0",
     "slick-carousel": "^1.8.1",

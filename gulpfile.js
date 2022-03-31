@@ -54,7 +54,11 @@ gulp.task('buildCss', () => {
         .pipe(gulp.dest(path.buildFolder.style));
 });
 gulp.task('buildJs', () => {
-    return gulp.src([path.src.script])
+    return gulp.src([
+            'node_modules/jquery/dist/jquery.js',
+            'node_modules/slick-carousel/slick/slick.js',
+            path.src.script,
+        ])
         .pipe(concat(path.buildName.script))
         // .pipe(uglify())
         .pipe(gulp.dest(path.buildFolder.script))
