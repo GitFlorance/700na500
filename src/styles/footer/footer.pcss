@@ -13,7 +13,6 @@
         display: flex;
         @media screen and (max-width: 768px) {
             flex-direction: column;
-            align-items: center;
         }
     }
 
@@ -55,6 +54,10 @@
         display: flex;
         align-items: center;
 
-        max-height: 28px;  
+        max-height: 28px;
+
+        @media screen and (max-width: 768px) {
+            align-self: center;
+        }
     }
 }
