@@ -5,17 +5,18 @@ const browserSync = require('browser-sync').create();
 const postcssPresetEnv = require('postcss-preset-env');
 const postcssShort = require('postcss-short');
 const autoprefixer = require('autoprefixer');
+const nunjucks = require('gulp-nunjucks');
 const nested = require('postcss-nested');
 const assets = require('postcss-assets');
 const cssnano = require('gulp-cssnano');
-const rename = require('gulp-rename');
-const glob = require('glob');
+const data = require('gulp-data');
 
 const path = {
     src: {
-        dir: 'src/*.html',
+        dir: 'src/index.html',
+        templates: 'src/**/*.html',
         script: 'src/scripts/*.js',
-        style: 'src/styles/*.pcss',
+        style: 'src/styles/**/*.pcss',
         images: 'src/imgs/*',
         fonts: 'src/fonts/*'
     },
@@ -68,7 +69,9 @@ gulp.task('buildFonts', () => {
         .pipe(gulp.dest(path.buildFolder.fonts))
 });
 gulp.task('buildHtml', () => {
-    return gulp.src([path.src.dir])
+    return gulp.src(path.src.dir)
+        .pipe(data(() => ({})))
+        .pipe(nunjucks.compile())
         .pipe(gulp.dest(path.buildFolder.dir))
 });
 
@@ -91,14 +94,15 @@ gulp.task('browser-sync', () => {
     browserSync.init({
         server: {
             baseDir: "./build"
-        }
+        },
+        open: false,
     });
     gulp.watch(path.src.style, gulp.series('buildCss-watch'));
-    gulp.watch(path.src.dir, gulp.series('buildHtml-watch'));
+    gulp.watch(path.src.templates, gulp.series('buildHtml-watch'));
     gulp.watch(path.src.script, gulp.series('buildJs-watch'));
 });
 
 
 
-gulp.task('dev', gulp.series('buildCss','buildHtml','buildJs','browser-sync'));
+gulp.task('dev', gulp.series('buildCss','buildHtml','buildJs', 'buildImgs', 'browser-sync'));
 // gulp.task('prod', ['buildCss','buildJs','buildImgs','buildFonts','buildHtml']);
