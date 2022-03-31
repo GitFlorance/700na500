@@ -1,0 +1,82 @@
+.header {
+    display: flex;
+    height: 204px;
+    width: 100%;
+    margin: 0 0 8px 0;
+    position: relative;
+
+    @media screen and (max-width: 768px) {
+        height: 120px;
+        margin: 0 0 30px 0;
+    }
+
+    &__content {
+        display: flex;
+        position: relative;
+        z-index: 100;
+        align-items: center;
+
+        @media screen and (max-width: 768px) {
+            padding: 0 15px;
+            justify-content: space-between;
+        }
+    }
+
+    &__logo {
+        flex: 0 0 42px;
+        height: 50px;
+    }
+
+    &__tabs {
+        height: 100%;
+        padding: 70px 0 0 0;
+        margin: 0 0 0 212px;
+        position: relative;
+        @media screen and (max-width: 768px) {
+            margin: 0;
+            padding: 12px 50px;
+            width: 250px;
+            height: auto;
+            position: absolute;
+            top: 120px;
+            right: 0;
+            background: #0B0A0D;
+        }
+    }
+    &__bg {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100vw;
+        height: 213px;
+        background: #0B0A0D;
+        transition: bottom 0.3s ease;
+        z-index: 1;
+    }
+    &__fade {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    &--active {
+        .header__fade {
+            position: absolute;
+            top: 212px;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            background: rgba(0, 0, 0, 0.4);
+            opacity: 1;
+            z-index: 1;
+            @media screen and (max-width: 768px) {
+                top: 120px;
+            }
+        }
+        .header__bg {
+            bottom: -212px;
+            @media screen and (max-width: 768px) {
+                display: none;
+            }
+        }
+    }
+}
