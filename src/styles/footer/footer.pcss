@@ -1,0 +1,60 @@
+.footer {
+    width: 100%;
+    background: #312F35;
+    padding-top: 50px;
+    padding-bottom: 80px;
+
+    @media screen and (max-width: 768px) {
+        padding-top: 80px;
+        padding-bottom:167px;
+    }
+
+    &__content {
+        display: flex;
+        @media screen and (max-width: 768px) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__text {
+        font-family: 'M PLUS 1p', sans-serif;
+        max-width: 400px;
+        margin-right: 120px;
+
+        @media screen and (max-width: 768px) {
+            margin: 0px 0px 40px 0px;
+            max-width: 290px;
+        }
+
+        &-name {
+            color: #FFF;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 24px;
+            margin-bottom: 10px;
+        }
+
+        &-description {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 21px;
+            color: #FFF;
+            margin-bottom: 25px;
+        }
+        
+        &-url {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 21px;
+            color: #FFF;
+        }
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+
+        max-height: 28px;  
+    }
+}
