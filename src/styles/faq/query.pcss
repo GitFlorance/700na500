@@ -1,20 +1,30 @@
 .query {
-
+    width: 988px;
     border-bottom: 0.5px solid #FFF;
     margin-bottom: 100px;
 
+    @media screen and (max-width: 768px) {
+        margin-bottom: 80px;
+        max-width: 290px;
+    }
+
     &__block {
-        font-family: 'M PLUS 1p', sans-serif;
 
         &-question {
             font-size: 24px;
             font-weight: 500;
             line-height: 35px;
+            cursor: pointer;
 
             margin-bottom: 30px;
 
             border-top: 0.5px solid #FFF;
             padding-top: 30px;
+
+            @media screen and (max-width: 768px) {
+                margin-bottom: 20px;
+                padding-top: 20px;
+            }
         }
 
         &-answer {
@@ -23,6 +33,17 @@
             line-height: 24px;
 
             margin-bottom: 30px;
+
+
+            @media screen and (max-width: 768px) {
+                margin-bottom: 20px;
+            }
         }
+    }
+    &__answer-wrap {
+        height: 0;
+        width: 100%;
+        transition: height 0.3s ease;
+        overflow: hidden;
     }
 }

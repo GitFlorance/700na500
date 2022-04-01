@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     const fade = document.querySelector('.js-fade');
     let previous;
 
-    const setHeightToWrap = (el, height) =>{
+    const setHeightToWrap = (el, height)=>{
         el.querySelector('.advantages__wrap').style.height = height
     }
     const openTab = (el) =>{
